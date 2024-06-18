@@ -2,6 +2,7 @@
 using FeedbackSystem.Application.Commands.SubmitFeedback;
 using FeedbackSystem.Application.Queries.GetAllFeedback;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FeedbackSystem.API.Controllers.v1;
@@ -24,10 +25,10 @@ public class FeedbackController : Controller
         return _mediator.Send(command);
     }
 
+    [Authorize]
     [MapToApiVersion("1")]
-    [Route("all")]
-    [HttpGet]
-    public Task<GetFeedbacksVm> GetAll()
+    [HttpGet("all")]
+    public Task<GetFeedbacksVm> Get()
     {
         return _mediator.Send(new GetFeedbacksQuery());
     }
