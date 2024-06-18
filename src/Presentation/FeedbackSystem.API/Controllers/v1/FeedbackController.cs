@@ -1,5 +1,6 @@
 ﻿using Asp.Versioning;
 using FeedbackSystem.Application.Commands.SubmitFeedback;
+using FeedbackSystem.Application.Queries.GetAllFeedback;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,5 +22,13 @@ public class FeedbackController : Controller
     public Task<string> Post([FromBody] SubmitFeedbackCommand command)
     {
         return _mediator.Send(command);
+    }
+
+    [MapToApiVersion("1")]
+    [Route("all")]
+    [HttpGet]
+    public Task<GetFeedbacksVm> GetAll()
+    {
+        return _mediator.Send(new GetFeedbacksQuery());
     }
 }
