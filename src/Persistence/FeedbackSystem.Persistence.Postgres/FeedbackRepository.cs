@@ -34,7 +34,7 @@ public class FeedbackRepository : IFeedbackRepository
         }
         catch (Exception exception)
         {
-            throw new Exception($"Could not add feedback by {feedback.CreatedBy}. {exception.Message}");
+            throw new Exception($"Could not add feedback. {exception.Message}");
         }
     }
 

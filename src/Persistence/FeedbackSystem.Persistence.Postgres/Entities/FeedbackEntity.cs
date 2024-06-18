@@ -13,8 +13,6 @@ public class FeedbackEntity
     public string Service { get; set; } = string.Empty;
     [Column("description")]
     public string Description { get; set; } = string.Empty;
-    [Column("created_by")]
-    public string CreatedBy { get; set; } = string.Empty;
     [Column("created_datetime")]
     public DateTime CreatedDatetime { get; set; }
 }
