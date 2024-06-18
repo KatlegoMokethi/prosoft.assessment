@@ -13,6 +13,10 @@
     <PackageReference Include="MediatR" Version="11.1.0" />
     <PackageReference Include="Asp.Versioning.Http" Version="7.1.0" />
     <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="7.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.20" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.6.1" />
+    <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="7.6.1" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.6.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,12 +24,14 @@
     <None Remove="Controllers\v1\" />
     <None Remove="Filters\" />
     <None Remove="Middleware\" />
+    <None Remove="Configuration\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Controllers\v1\" />
     <Folder Include="Filters\" />
     <Folder Include="Middleware\" />
+    <Folder Include="Configuration\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\FeedbackSystem.Application\FeedbackSystem.Application.csproj">
