@@ -37,4 +37,23 @@ public class FeedbackRepository : IFeedbackRepository
             throw new Exception($"Could not add feedback by {feedback.CreatedBy}. {exception.Message}");
         }
     }
+
+    public async Task<List<Feedback>> GetFeedbacksAsync()
+    {
+        try
+        {
+            await using var dbContext = await _dbContextFactory.CreateDbContextAsync();
+
+            var entities = dbContext.Feedback
+                .AsNoTracking()
+                .Where(x => x.Id > 0);
+
+            var feedbacks = _mapper.Map<List<Feedback>>(entities);
+            return feedbacks;
+        }
+        catch (Exception exception)
+        {
+            throw new Exception($"Could retrieve feedbacks from the database. {exception.Message}");
+        }
+    }
 }
