@@ -28,5 +28,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FeedbackSystem.Domain\FeedbackSystem.Domain.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\FeedbackSystem.Infrastructure\FeedbackSystem.Infrastructure.csproj" />
   </ItemGroup>
 </Project>
