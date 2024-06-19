@@ -40,5 +40,8 @@
     <ProjectReference Include="..\..\Persistence\FeedbackSystem.Persistence.Postgres\FeedbackSystem.Persistence.Postgres.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\FeedbackSystem.Infrastructure\FeedbackSystem.Infrastructure.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 </Project>

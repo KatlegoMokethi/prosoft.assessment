@@ -4,6 +4,7 @@ using FeedbackSystem.API.Configuration;
 using FeedbackSystem.API.Filters;
 using FeedbackSystem.API.Middleware;
 using FeedbackSystem.Application;
+using FeedbackSystem.Infrastructure;
 using FeedbackSystem.Persistence.Postgres;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -20,6 +21,7 @@ ConfigureApiVersioning(builder.Services);
 
 builder.Services.AddApplicationLayer();
 builder.Services.AddPersistenceLayer(builder.Configuration.GetConnectionString("DbConnectionString")!);
+builder.Services.AddNotificationService(builder.Configuration);
 
 var app = builder.Build();
 
