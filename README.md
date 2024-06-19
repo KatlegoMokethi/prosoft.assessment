@@ -5,7 +5,7 @@
 - Database: Postgres
 
 ## Architecture:
-I opted for Clean Architecture for promoting separion of concerns between core business logic (handling customer feedback) and external systems i.e the database and notification service. This has ensured that changes in each layer won't afftec others, making the Web API more maintainable and adaptable to change. I used this with CQRS to handle requests, which keeps the code clean and mainatable as well. I then chose PostgresSQL due to its reliability, conforming to SQL standards and has JSON support (in case we need to store document objects). It's flexible for this backend solution, managing data effectively.
+I opted for Clean Architecture for promoting separation of concerns between core business logic (handling customer feedback) and external systems i.e the database and notification service. This has ensured that changes in each layer won't affect others, making the Web API more maintainable and adaptable to change. I used this with CQRS to handle requests, which keeps the code clean and maintainable as well. I then chose PostgresSQL due to its reliability, conforming to SQL standards and has JSON support (in case we need to store document objects). It's flexible for this backend solution, managing data effectively.
 
 ## How to run the API:
 - After pulling the repo to your local machine, download and install PgAdmin (https://www.pgadmin.org/download/). This will install a local postgres server to get started with.
